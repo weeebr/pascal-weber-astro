@@ -1,0 +1,60 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# testing
+/coverage/*
+
+# production
+/build
+**/public/authorize
+**/public/init-thirdparty.min.js
+**/public/branding-day-css.min.js
+**/public/hybrid/menu.json
+
+# auto-generated files
+**/queries-backend.json
+**/queries-frontend.js
+**/introspection.json
+
+# Python cache directory
+**/__pycache__
+
+# clinic output
+/clinic
+
+# certs
+/certs
+
+# logs
+/logs
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.idea
+.eslintcache
+.dccache
+tsconfig.tsbuildinfo
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+!.yarn/cache
+
+# ci makefile files
+ci.up
+/test-results/
+/playwright-report/
+/playwright/.cache/

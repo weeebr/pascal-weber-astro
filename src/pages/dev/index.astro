@@ -1,0 +1,11 @@
+---
+import { dev } from "../../helpers/constants";
+import Dev from "./[id].astro";
+---
+<div class="w-full flex flex-col">
+	{dev.map((current, idx) => 
+		<a href={`/dev/${idx}`}>
+			<Dev current={current} id={idx} />
+		</a>
+	)}
+</div>

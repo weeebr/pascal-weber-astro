@@ -1,0 +1,11 @@
+---
+import { designs } from "../../helpers/constants";
+import Design from "./[id].astro";
+---
+<div class="w-full flex flex-col">
+	{designs.map((current, idx) => 
+		<a href={`/design/${idx}`}>
+			<Design current={current} id={idx} />
+		</a>
+	)}
+</div>
