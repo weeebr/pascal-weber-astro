@@ -2,10 +2,17 @@
 import { dev } from "../../helpers/constants";
 const { id } = Astro.params;
 const current = dev[id] || Astro.props.current;
+console.log('<fff>', `current: `, current);
 ---
 <div class="w-full flex flex-col">
     <h2>{current.title}</h2>
-    <p>{current.client}</p>
+    <h2>{current.year}</h2>
+    <p>{current.description}</p>
+    {current.more && <a href={current.url} target="_blank" rel="noreferrer">{'more'}</a>}
 
     <img src={current.thumbnail.src} width={'100%'} height={'100%'} alt={current.title} />
+
+    {current.images.map(img => 
+        <img src={img.src} width={'100%'} height={'100%'} alt={current.title} />
+    )}
 </div>
