@@ -74,11 +74,11 @@ const [prevUrl, nextUrl] = prevNext(designs, id).map(id => `/design/${id}`);
 </style>
 
 <div class="wrapper">
-    <Link url={'/design'}>
       <button class="close">
-        <img src={closeIcon.src} alt="close" />
+        <Link url={'/design'}>
+          <img src={closeIcon.src} alt="close" />
+        </Link>
       </button>
-    </Link>
 
     <div>
       <h2>{current.client}</h2>
