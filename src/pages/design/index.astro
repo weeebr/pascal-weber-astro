@@ -1,11 +1,59 @@
 ---
 import { designs } from "../../helpers/constants";
-import Design from "./[id].astro";
+import Link from "../../components/link.astro";
 ---
-<div class="w-full flex flex-col">
+<style>
+	li:not(:last-child) {
+		margin-bottom: 12px;
+	}
+	
+	.card {
+		width: 100%;
+    height: 150px;
+    border: 7px solid #c7d981;
+    transition: all .4s ease 0s;
+    cursor: pointer;
+    position: relative;
+		overflow: hidden;
+
+		&:hover {
+			border: 0 solid transparent;
+
+			img {
+				filter: grayscale(0);
+			}
+		}
+
+		&::before {
+			background: rgba(198, 213, 143, 0.32);
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			content: "";
+			display: block;
+			position: absolute;
+			z-index: 1;
+			transition: all 1s ease 0s;
+		}
+
+		img {
+			transition: all 1.5s ease 0s;
+    	filter: grayscale(1);
+		}
+	}
+</style>
+
+<div>
+	<ul>
 	{designs.map((current, idx) => 
-		<a href={`/design/${idx}`}>
-			<Design current={current} id={idx} />
-		</a>
+		<li>
+			<Link url={`/design/${idx}`}>
+				<div class="card">
+					<img src={current.src.src} alt={current.title} />
+				</div>
+			</Link>
+		</li>
 	)}
+	</ul>
 </div>

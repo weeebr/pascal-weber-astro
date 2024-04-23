@@ -1,0 +1,52 @@
+{
+    "sort-imports.on-save": true,
+    "tslint.enable": false,
+    "eslint.probe": ["graphql", "json", "javascriptreact", "typescriptreact"],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "css.validate": false,
+    "stylelint.validate": ["css", "pscss", "postcss"],
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false,
+    "editor.tabSize": 2,
+    "javascript.format.enable": false,
+    "javascript.validate.enable": false,
+    "files.associations": {
+      "*.js": "javascriptreact",
+      "*.tsx": "typescriptreact",
+      "*.pcss": "css"
+    },
+    "prettier.ignorePath": ".prettierignore",
+    "typescript.check.npmIsInstalled": true,
+    "typescript.format.enable": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "never",
+      "source.fixAll.eslint": "explicit"
+    },
+    "[css]": {
+      "editor.codeActionsOnSave": {
+        "source.fixAll.stylelint": "explicit"
+      }
+    },
+    "[postcss]": {
+      "editor.codeActionsOnSave": {
+        "source.fixAll.stylelint": "explicit"
+      }
+    },
+    "[json]": {
+      "editor.formatOnSave": true
+    },
+    "eslint.run": "onSave",
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "sonarlint.connectedMode.project": {
+      "projectKey": "rasch-dtc_rasch-stack2"
+    },
+    "sonarlint.disableTelemetry": true,
+    "sonarlint.testFilePattern": "**/_tests__/**",
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "[css][postcss]": {
+      "editor.codeActionsOnSave": {
+        "source.fixAll.stylelint": "explicit"
+      }
+    }
+  }
+  

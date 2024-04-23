@@ -1,11 +1,61 @@
 ---
 import { dev } from "../../helpers/constants";
-import Dev from "./[id].astro";
+import Link from "../../components/link.astro";
 ---
-<div class="w-full flex flex-col">
+<style>
+	li:not(:last-child) {
+		margin-bottom: 12px;
+	}
+
+	.card {
+    display: flex;
+    align-items: center;
+    box-shadow: rgb(156, 214, 215) 0px 0px 0px 1px;
+    background: #9cd6d7;
+    text-align: center;
+    cursor: pointer;
+    transition: all 1s ease 0s;
+    flex-direction: row;
+		justify-content: space-between;
+    padding: 19px 30px 16px 40px;
+    width: 100%;
+    height: auto;
+
+		.title {
+			font-weight: 600;
+    	font-size: 18px;
+		}
+
+		.year {
+			font-size: 16px;
+		}
+
+		.link {
+			display: flex;
+			align-items: center;
+			text-transform: uppercase;
+			font-size: 14px;
+			font-weight: 600;
+			padding: 4px 8px;
+			transition: all 0.5s ease 0s;
+			color: rgb(240, 245, 244);
+			background: rgb(16, 39, 51);
+		}
+  }
+</style>
+
+<ul>
 	{dev.map((current, idx) => 
-		<a href={`/dev/${idx}`}>
-			<Dev current={current} id={idx} />
-		</a>
+		<li>
+			<div class="card">
+				<Link url={`/dev/${idx}`}>
+					<div>
+						<p class="title">{current.title}</p>
+						<p class="year">{current.year}</p>
+					</div>
+					<Link url={`/dev/${idx}`}><span class="link">{current.more ? 'More' : 'Demo'}</span></Link>
+					</Link>
+				</div>
+		</li>
 	)}
-</div>
+</ul>

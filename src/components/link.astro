@@ -1,0 +1,13 @@
+---
+const { id } = Astro.params;
+const { url, label, target } = Astro.props;
+console.log('<fff>', `children: `, Astro.props);
+---
+<a 
+  href={url} 
+  target={target || "_self"} 
+  id={id} 
+  rel="noopener noreferrer">
+    {label || <slot />}
+</a>
+

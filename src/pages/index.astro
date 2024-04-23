@@ -1,5 +1,5 @@
 ---
-
+import Link from '../components/link.astro';
 ---
 
 <html lang="en">
@@ -8,10 +8,10 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Pascal Weber</title>
 	</head>
 	<body>
-		<a href="/dev">/Dev</a>
-		<a href="/design">/Design</a>
+		<Link url="/dev" label={'/ Dev'} />
+		<Link url="/design" label={'/ Design'} />
 	</body>
 </html>
